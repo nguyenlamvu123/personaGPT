@@ -14,8 +14,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 load_dotenv(verbose=True)
 # paths and configs
 save_path = os.getenv("save_path")
-tokenizer_path = os.path.join(save_path, 'checkpoint/tokenizer/')
-model_path = os.path.join(save_path, 'checkpoint/model/')
+tokenizer_path = os.path.join(save_path, 'checkpoint', 'tokenizer')
+model_path = os.path.join(save_path, 'checkpoint', 'model')
 data_path = os.getenv("data_path")
 # learning
 lr = os.getenv("learn_rate")
@@ -41,9 +41,9 @@ class Configs():
         self.raw_data_path = os.path.join(save_path, 'train_data')
         self.val_data_path = os.path.join(save_path, 'valid_data')
         self.active_data_path = os.path.join(data_path, 'active_data')
-        self.output_dir = os.path.join(save_path, 'checkpoint/model/')
-        self.model_name_or_path = os.path.join(save_path,'checkpoint/model/')
-        self.plot_path = os.path.join(save_path,'samples/')
+        self.output_dir = os.path.join(save_path, 'checkpoint', 'model')
+        self.model_name_or_path = os.path.join(save_path, 'checkpoint', 'model')
+        self.plot_path = os.path.join(save_path, 'samples')
         self.download_name = 'microsoft/DialoGPT-medium'
         self.i2p_path = os.path.join(save_path, 'i2p')
         # eval
